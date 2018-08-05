@@ -3,7 +3,6 @@ package dao;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import utils.HibernateUtil;
-
 import java.util.Optional;
 
 /**
@@ -24,7 +23,7 @@ public abstract class AbstractDAO<T> {
         Session session = HibernateUtil.getHibernateSession();
         try{
             session.beginTransaction();
-            session.save(entity);
+            session.save(entity)
             session.getTransaction().commit();
             return Optional.of(entity);
         }catch (HibernateException ex){
