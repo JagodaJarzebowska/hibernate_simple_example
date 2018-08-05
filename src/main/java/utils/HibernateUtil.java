@@ -4,6 +4,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+/**
+ * Hibernate util class
+ * get session and close session methods
+ */
 public final class HibernateUtil {
 
     private final static SessionFactory SESSION_FACTORY = new Configuration()
@@ -16,6 +20,10 @@ public final class HibernateUtil {
 
     }
 
+    /**
+     * Open session method
+     * @return opened session
+     */
     public static Session getHibernateSession(){
         if (session==null){
             session = SESSION_FACTORY.openSession();
@@ -23,9 +31,11 @@ public final class HibernateUtil {
         return session;
     }
 
+    /**
+     * Close session method
+     */
     public static void closeHibernateSession(){
         session.close();
         SESSION_FACTORY.close();
     }
-
 }

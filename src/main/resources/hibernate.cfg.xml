@@ -30,7 +30,7 @@
         <property name="hibernate.format_sql">true</property>
 
         <property name="hibernate.generate_statistics">true</property>
-
+        <mapping class="entity.User"></mapping>
 
 
     </session-factory>
